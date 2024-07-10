@@ -1,3 +1,72 @@
-<div>
-    123421
+import moment from 'moment'
+
+class {
+    endTime = 0;
+    stepTimer = 0;
+
+    onCreate(input) {
+        this.state = {
+            displayTimeText: ""
+        };
+        if (input.endDate) {
+            this.endTime = moment(input.endDate);
+        } else {
+            this.endTime = moment().add(2, 'days');
+        };
+
+        this.updateTimeText();
+    }
+
+    onMount() {
+        this.initStep();
+    }
+
+    onDestroy() {
+        cancelAnimationFrame(this.stepTimer);
+    }
+
+    initStep() {
+        let startTimeStamp = Math.round(performance.now());
+        
+        const step = (curTimeStamp) => {
+            const diff = curTimeStamp - startTimeStamp;
+
+            if (diff >= 1000) {
+                this.updateTimeText();
+                startTimeStamp = curTimeStamp;
+            }
+            this.stepTimer = requestAnimationFrame(step);
+        };
+
+        this.stepTimer = requestAnimationFrame(step);
+    }
+
+    updateTimeText(){
+        let startT = moment(new Date());
+        let diffT = this.endTime.diff(startT);
+        let timeText = "ended";
+        
+        if (diffT.valueOf() > 0) {
+            timeText = `${this.fillZero(moment.duration(diffT).days())}:${this.fillZero(moment.duration(diffT).hours())}:${this.fillZero(moment.duration(diffT).minutes())}:${this.fillZero(moment.duration(diffT).seconds())}`
+        } else {
+            this.stepTimer ?? cancelAnimationFrame(this.stepTimer);
+        }
+
+        this.state.displayTimeText = timeText;
+    }
+
+    fillZero(num) {
+        return num.toString().padStart(2, '0');
+    }
+}
+
+<div.highlight>
+    ${state.displayTimeText}
 </div>
+
+style {
+    .highlight{
+        color: #7ACFF2;
+        font-weight: bold;
+    }
+}

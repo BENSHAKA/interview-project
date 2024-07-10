@@ -1,24 +1,73 @@
-<div>
-    <div>
+$ const infoList = [{
+        title: "fdfdfd",
+        desc: "fdfdfd"
+    }, {
+        title: "fdfdfd",
+        desc: "fdfdfd"
+    }, {
+        title: "fdfdfd",
+        desc: "fdfdfd"
+    }]
+
+<div.detail-info-wrap>
+    <header>
         <div.title>
             dfsfddssd
         </div>
         <div.desc>
             dfdsfd
         </div>
-    </div>
-    <div>
+    </header>
     <!-- 循环 -->
-        <div>
+    <for|infoItem| of=infoList>
+        <div.detail-info-item>
             <img src="../statics/logo.svg" />
             <div>
-                <div.item-title>fdfdfd</div>
-                <div.item-desc>fdfdfd</div>
+                <div.item-title>${infoItem.title}</div>
+                <div.item-desc>${infoItem.desc}</div>
             </div>
         </div>
-    </div>
+    </for>
 </div>
 
-style {
+style.less {
+    .detail-info-wrap {
+        height: 100%;
+        header {
+            background-color: #0133A0;
+            padding: 0.6rem;
+            box-sizing: border-box;
 
+            .title {
+                font-weight: bold;
+                color: #7ACFF2;
+                line-height: 1;
+            }
+            .desc {
+                color: #fff;
+                font-size: 0.6rem;
+                line-height: 1rem;
+            }
+        }
+        .detail-info-item {
+            display: flex;
+            align-items: center;
+            height: 28%;
+            padding: 0 0.6rem;
+            img {
+                width: 2rem;
+                height: auto;
+                margin-right: 0.5rem;
+            }
+            .item-title {
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+                font-size: 0.8rem;
+            }
+            .item-desc {
+                font-size: 0.6rem;
+                color: #a09c9c;
+            }
+        }
+    }
 }

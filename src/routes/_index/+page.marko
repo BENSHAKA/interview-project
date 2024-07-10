@@ -1,11 +1,43 @@
-<div>
-  <main>
+<main>
+  <div.page-header-wrap>
     <page-header />
+  </div>
+  <div.main-content>
     <div>
       <detail-info />
+    </div>
+    <div>
       <quote-form />
     </div>
-  </main>
-</div>
+  </div.main-content>
+</main>
 
-style {}
+style {
+  main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .page-header-wrap {
+    height: 40%;
+  }
+  .main-content {
+    flex: 1;
+    display: flex;
+    gap: 1rem
+  }
+  .main-content > div {
+    margin-top: 1rem;
+    box-sizing: border-box;
+    flex: 1;
+  }
+
+  @media screen and (max-width: 800px) {
+    .page-header-wrap {
+      height: 20%;
+    }
+    .main-content {
+      flex-direction: column;
+    }
+  }
+}

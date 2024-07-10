@@ -1,19 +1,60 @@
-<header>
-    <div>
+<header.page-header>
+    <div.img-wrap>
         <img src="../statics/logo.svg" />
-        <div>
+    </div.img-wrap>
+    <div.info-wrap>    
+        <div.info>
             <chronograph />
             <div>sdkldfdfdf</div>
-        </div>
-    </div>
-    <h1>
-        sdfsdfsdfsd
-        <span>
-            fdsflsdkflsdf
-        </span>
-    </h1>
+        </div.info>
+        <div.header-title>
+            sdfsdfsdfsd
+            <span.highlight>
+                fdsflsdkflsdf
+            </span.highlight>
+        </div.header-title>
+    </div.info-wrap>
 </header>
 
-<style>
-    
-</style>
+style.less {
+    .page-header {
+        background-color: #0D1940;
+        color: #fff;
+        line-height: 1;
+        padding: 1.25rem;
+        display: flex;
+        height: 100%;
+        align-items: flex-start;
+        box-sizing: border-box;
+        header .highlight{
+            color: #7ACFF2;
+        }
+        .img-wrap {
+            height: 2.25rem;
+            display: flex;
+            align-items: center;
+        }
+        .img-wrap img {
+            width: auto;
+            height: 2.25rem;
+        }
+        .info-wrap {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            margin-left: 1rem;
+        }
+        .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 2.25rem;
+        }
+        .header-title {
+            font-size: 2rem;
+            word-wrap: break-word;
+            margin-top: 0.5rem;
+            line-height: 2.2rem;
+        }
+    }
+}

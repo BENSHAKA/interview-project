@@ -1,14 +1,113 @@
-<form>
-    <div>
+<form.quote-form-wrap>
+    <div.title>
         fdffdf
+    </div.title>
+    <div.row>
+        <div.form-item.span6.col>
+            <label>
+                First Name
+            </label>
+            <input />
+        </div>
+        <div.form-item.span6.col>
+            <label>
+                Last Name
+            </label>
+            <input />
+        </div>
     </div>
-    <div>
+    <div.form-item.col>
+        <label>
+            Email Address
+        </label>
         <input />
     </div>
-    <div>
-        <input type="checkbox" />
+    <div.title>
+        dfdfdf
     </div>
-    <button>
-        submit
-    </button>
-</form>
+    <div.form-item>
+        <input type="checkbox" />
+        <label>
+            dfd dfdfd dfdfdf
+        </label>
+    </div>
+    <div.form-item>
+        <input type="checkbox" />
+        <label>
+            dfd dfdfd dfdfdf
+        </label>
+    </div>
+    <div.form-item>
+        <input type="checkbox" />
+        <label>
+            dfd dfdfd dfdfdf
+        </label>
+    </div>
+    <div.button-wrap>
+        <button>
+            Learn More
+        </button>
+    </div.button-wrap>
+</form.quote-form-wrap>
+
+style.less {
+    .quote-form-wrap {
+        background-color: #0D1940;
+        color: #fff;
+        height: 100%;
+        padding: 0.6rem 1.25rem;
+        box-sizing: border-box;
+        .title {
+            margin-bottom: 1rem;
+        }
+        .form-item {
+            display: flex;
+            margin-bottom: 1rem;
+            label {
+                text-indent: 0.5em;
+                font-size: 0.5em;
+                margin-bottom: 2px;
+                display: flex;
+                align-items: center;
+            }
+            input {
+                border: none;
+                border-radius: 4px;
+                height: 1.25rem;
+                text-indent: 0.5em;
+                outline: none;
+            }
+            input[type="checkbox"] {
+                margin-right: 5px;
+            }
+        }
+        .form-item.col {
+            flex-direction: column;
+        }
+        .row {
+            display: flex;
+            gap: 1rem;
+            .span6 {
+                flex: 1;
+            }
+        }
+        .button-wrap {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        button {
+            color: #0D1940;
+            font-weight: bold;
+            text-align: center;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            background-color: #FE6F5F;
+            border-radius: 0.8rem;
+            width: 8rem;
+            margin: 0 auto;
+            border: 0;
+            font-size: 0.8rem;
+        }
+    }
+}
