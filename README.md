@@ -1,23 +1,17 @@
-# Thanks for checking out Marko
+# Thanks for checking 
 
-# Installation
+# Description
+This project is an interview test project by using MarkoJs.
 
-```
-npx @marko/create marko-app --template basic
-cd marko-app
-npm install
-npm run dev
-```
+**Implementation details:**
+- Countdown time defaults to 2 days.
+- When the window width is less than 800px, the modules will be aligned vertically.
 
-## Overview
 
-This project is powered by [@marko/run](https://github.com/marko-js/run).
+# Screenshots
+**window size >= 800px:**
+![alt text](image.png)
 
-- Run `npm run dev` to start the development server
-- Run `npm run build` to build a production-ready node.js server
-- Run `npm run preview` to run the production server
+**window size < 800px:**
 
-## Adding Pages
-
-Pages map to the directory structure. You can add additional pages by creating files/directories under `src/routes` with `+page.marko` files.  Learn more in the [`@marko/run` docs](https://github.com/marko-js/run/#file-based-routing).
-
+![alt text](image-1.png)
